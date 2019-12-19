@@ -1,23 +1,24 @@
-var webpack = require("webpack");
+const path = require('path');
+
 module.exports = {
-  entry: __dirname+"/src/app/gameBoard.js",
+  entry: './src/app/gameBoard.js',
   output: {
-        path: __dirname+"/src/",
-        filename: "bundle.js",
-        publicPath: "app"
+    path: path.join(__dirname, 'public'),
+    filename: 'bundle.js'
   },
   module: {
-    loaders:[
+    rules: [
       {
         test: /\.js$/,
-        exclude:/(node_modules)/,
-        loader: 'babel-loader',
-        query:{
-          presets:['react','es2015','stage-2']
-        }
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       },
-        {test: /\.Sass/, use:['style-loader','css-loader','sass-loader']}
-
+      {test: /\.Sass/, use:['style-loader','css-loader','sass-loader']}
     ]
+  },
+  devtool: 'cheap-module-eval-source-map',
+  // changed line
+  devServer: {
+    contentBase: path.join(__dirname, 'public')
   }
 };
