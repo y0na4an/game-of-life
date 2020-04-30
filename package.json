@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/y0na4an/game-of-life#readme",
   "dependencies": {
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "react": "^16.12.0",
     "react-bootstrap": "^0.33.1",
     "react-dom": "^16.12.0"
